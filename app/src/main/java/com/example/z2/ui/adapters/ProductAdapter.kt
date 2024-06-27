@@ -8,7 +8,7 @@ import com.example.z2.ui.models.Product
 
 class ProductAdapter(): RecyclerView.Adapter<ProductAdapter.ViewHolder>() {
 
-    private var selectetPosition: Int = -1
+    private var selectedPosition: Int = -1
     private var selectedProduct: ProductAdapter? = null
     private lateinit var items: List<Product>
 
@@ -29,7 +29,7 @@ class ProductAdapter(): RecyclerView.Adapter<ProductAdapter.ViewHolder>() {
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = items[position]
         holder.tvProductName.text = item.name
-        holder.itemView.isSelected = selectetPosition == holder.layoutPosition
+        holder.itemView.isSelected = selectedPosition == holder.layoutPosition
     }
 
     override fun getItemCount(): Int{
